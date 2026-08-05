@@ -205,3 +205,34 @@ print('Password: ', password)
 import pwinput
 password = pwinput.password("Password", mask='@')
 print('Password: ', password)
+
+size = int(input("Enter the size of the board: "))
+
+# Create the board
+board = [["0"] * size for i in range(size)]
+
+# Player position
+player_row = int(input("Player row: "))
+player_col = int(input("Player column: "))
+
+# Place player
+if 1 <= player_row <= size and 1 <= player_col <= size:
+    board[player_row - 1][player_col - 1] = "P"
+
+# Print column numbers
+print("\n ", end="")
+for i in range(1, size + 1):
+    print(i, end=" ")
+print()
+
+# Print board
+for i, row in enumerate(board, start=1):
+    print(i, *row)
+
+print("\nHint: Enter -1,-1 to reveal enemy location.")
+
+bomb_row = int(input("Bomb row: "))
+bomb_col = int(input("Bomb column: "))
+
+if bomb_row == -1 and bomb_col == -1:
+    print(f"Hint: Enemy is at ({size},{size})")
