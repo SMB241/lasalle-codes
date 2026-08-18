@@ -289,55 +289,62 @@ from py import numbers
 # print(number)
 
 # Lambda
-multiplay_add = lambda n1 : n1 * 2 + 2
-print(multiplay_add(2))
-# Lambda 2
-jahaziel = lambda j1, j2 : j1 + " Heart " + j2
-print(jahaziel('Jaha', 'Clie'))
-#Lambda 3
-in_a_relationship = lambda value : 'Sila na' if value == 1 else 'Fake news'
-import random
-print(in_a_relationship(random.randint(1, 2)))
-
-#map
-numbers = [x for x in range(1, 11)]
-print(numbers)
-
-def add_one(n):
-   return n + random.randint(1, 50)
-final_values = list(map(add_one, numbers))
-print(final_values)
-
-#map2
-numbers1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-numbers2 = [13, 13, 5, 17, 35, 25, 47, 35, 48, 14]
-print(numbers1, numbers2)
-
-def add_2_numbers(n1,n2):
-    return n1 + n2
-map(add_2_numbers, numbers1, numbers2)
-string1 = ['Alice', 'Bob', 'Charlie']
-string2 = ['Angelo', 'Brespicio', 'Crespicio']
-def add_two_strings(s1,s2):
-    return s2 + ", " + s1
-print(list(map(add_two_strings, string1, string2)))
-
-#filters with lambda
-numbers1 = [1, 20, 45, 3, 90, 6,]
-final_values = list(filter(lambda x:True if x > 10 else False, numbers1))
-print(final_values)
-final_values = list(filter(lambda x: x % 2 == 0, numbers1))
-print("Even: ", final_values)
-#filter check if names start wtih A
-names = ['Aaron', 'Bob', 'Andrea', 'Jim', 'AKim', 'Lim']
-s = 'Aaron'
-starts_with_a = list(filter(lambda s: s.startswith('A'), names))
-print(starts_with_a)
-a = ''
-ends_with_a = list(filter(lambda s: s.endswith('m'), names))
-print(ends_with_a)
-#version1
-as_long_as_you_have_a = [list(filter(lambda s:'a' in s, names))]
-print(as_long_as_you_have_a)
-
-
+# multiplay_add = lambda n1 : n1 * 2 + 2
+# print(multiplay_add(2))
+# # Lambda 2
+# jahaziel = lambda j1, j2 : j1 + " Heart " + j2
+# print(jahaziel('Jaha', 'Clie'))
+# #Lambda 3
+# in_a_relationship = lambda value : 'Sila na' if value == 1 else 'Fake news'
+# import random
+# print(in_a_relationship(random.randint(1, 2)))
+#
+# #map
+# numbers = [x for x in range(1, 11)]
+# print(numbers)
+#
+# def add_one(n):
+#    return n + random.randint(1, 50)
+# final_values = list(map(add_one, numbers))
+# print(final_values)
+#
+# #map2
+# numbers1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# numbers2 = [13, 13, 5, 17, 35, 25, 47, 35, 48, 14]
+# print(numbers1, numbers2)
+#
+# def add_2_numbers(n1,n2):
+#     return n1 + n2
+# map(add_2_numbers, numbers1, numbers2)
+# string1 = ['Alice', 'Bob', 'Charlie']
+# string2 = ['Angelo', 'Brespicio', 'Crespicio']
+# def add_two_strings(s1,s2):
+#     return s2 + ", " + s1
+# print(list(map(add_two_strings, string1, string2)))
+#
+# #filters with lambda
+# numbers1 = [1, 20, 45, 3, 90, 6,]
+# final_values = list(filter(lambda x:True if x > 10 else False, numbers1))
+# print(final_values)
+# final_values = list(filter(lambda x: x % 2 == 0, numbers1))
+# print("Even: ", final_values)
+# #filter check if names start wtih A
+# names = ['Aaron', 'Bob', 'Andrea', 'Jim', 'AKim', 'Lim']
+# s = 'Aaron'
+# starts_with_a = list(filter(lambda s: s.startswith('A'), names))
+# print(starts_with_a)
+# a = ''
+# ends_with_a = list(filter(lambda s: s.endswith('m'), names))
+# print(ends_with_a)
+# #version1
+# as_long_as_you_have_a = [list(filter(lambda s:'a' in s, names))]
+# print(as_long_as_you_have_a)
+#zip
+names = ['Alice', 'Bob', 'Charlie', 'David']
+scores = [90, 40, 95, 50]
+def join_list(lst1, lst2):
+    final_lst = []
+    for i in range(len(lst1)):
+        final_lst.append((lst1[i], lst2[i]))
+    return final_lst
+print(join_list(scores, names))
