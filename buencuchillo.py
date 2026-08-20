@@ -1,3 +1,57 @@
+numbers = []
+
+while True:
+    user = input("> ").lower()
+
+    if user == "help":
+        print("show")
+        print("add <value1>, <value2>, <value3>...")
+        print("update <old value> <new value>")
+        print("reset")
+        print("exit")
+
+    elif user.startswith("add"):
+        values = user[3:].strip()
+
+        if values == "":
+            print("Error: No values provided.")
+        else:
+            nums = values.split(",")
+            numbers.extend(nums)
+            print("Items added.")
+
+    elif user == "show":
+        if len(numbers) == 0:
+            print("List is empty")
+        else:
+            print(numbers)
+
+    elif user.startswith("update"):
+        values = user[6:].strip().split()
+
+        if len(values) == 2:
+            old_value = values[0]
+            new_value = values[1]
+
+            if old_value in numbers:
+                position = numbers.index(old_value)
+                numbers[position] = new_value
+                print("Item updated.")
+            else:
+                print("Value not found.")
+        else:
+            print("Error: Enter old and new values.")
+
+    elif user == "reset":
+        numbers = []
+        print("List is cleared.")
+
+    elif user == "exit":
+        break
+
+    else:
+        print("Unknown command.")
+
 # # # # # #long
 # # # # # matrix = [[0] * 3] *3
 # # # # # print(matrix)
@@ -291,6 +345,8 @@ from py import numbers
 # Lambda
 # multiplay_add = lambda n1 : n1 * 2 + 2
 # print(multiplay_add(2))
+
+
 # # Lambda 2
 # jahaziel = lambda j1, j2 : j1 + " Heart " + j2
 # print(jahaziel('Jaha', 'Clie'))
