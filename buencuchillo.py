@@ -1,3 +1,45 @@
+
+import random
+
+print("Sets Game\n")
+
+num_questions = int(input("Enter # of questions: "))
+print()
+
+operations = ["Union", "Intersection"]
+
+for i in range(1, num_questions + 1):
+    # Randomly pick set elements and operation
+    op = random.choice(operations)
+    set_a = set(random.sample(range(1, 10), random.randint(3, 6)))
+    set_b = set(random.sample(range(1, 10), random.randint(3, 6)))
+
+    print(f"{i}. {op}")
+    print(f"a = {set_a}")
+    print(f"b = {set_b}")
+
+    user_input = input("ans: ")
+
+    # Calculate correct answer
+    if op == "Union":
+        correct_set = set_a.union(set_b)
+    else:
+        correct_set = set_a.intersection(set_b)
+
+    # Convert user input (comma-separated numbers) to a set
+    try:
+        user_set = set(map(int, user_input.replace(" ", "").split(","))) if user_input.strip() else set()
+    except ValueError:
+        user_set = set()
+
+    # Compare sets
+    if user_set == correct_set:
+        print("Correct!\n")
+    else:
+        print("Wrong!")
+        # Format output as sorted, comma-separated values matching the image
+        correct_str = ", ".join(map(str, sorted(correct_set)))
+        print(f"Correct answer: {correct_str}\n")
 print(student)
 
 student.update({
