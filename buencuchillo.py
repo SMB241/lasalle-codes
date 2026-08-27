@@ -1,3 +1,33 @@
+print(student)
+
+student.update({
+    "city": "Manila",
+    "year": 2
+})
+
+print(student)
+
+student["age"] = 21
+
+print(student)
+
+student.update({
+    "city": "Manila",
+    "year": 2
+})
+
+student = {
+    "name": ["Eischied", "Brock", "Connor"],
+    "age": [11, 22, 33]
+}
+
+print(student)
+
+x = student.pop("names", "Theres nothing there")
+
+print(x)
+
+
 numbers = []
 
 while True:
