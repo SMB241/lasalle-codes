@@ -34,6 +34,65 @@ if op == 'Union':
 elif op == 'Intersection':
     print("Intersection")
     correct_set = a.intersection(b)
+elif op == 'Difference':
+    print("Difference")
+    correct_set = a.difference(b)
+
+elif op == 'Symmetric Difference':
+    print("Symmetric Difference")
+    correct_set = a.symmetric_difference(b)
+
+else:
+    print("Invalid Input")
+
+
+
+
+
+
+
+
+
+
+
+
+
+def generate_set(user):
+    import random
+    nSize = random.randint(1, 10)
+    a = set()
+    b = set()
+    for num in range(nSize):
+        a.add(random.randint(1, 10))
+        b.add(random.randint(1, 10))
+    print("a = ", a)
+    print("b = ", b)
+
+import random
+
+user = (input("Enter # of Questions: "))
+print()
+
+operations = ['Union', 'Intersection', 'Difference', 'Symmetric Difference']
+
+for i in range(1, user + 1):
+    op = random.choice(operations)
+    nSize = random.randint(1, 10)
+    a = set()
+    b = set()
+    for num in range(nSize):
+        a.add(random.randint(1, 10))
+        b.add(random.randint(1, 10))
+    print("a = ", a)
+    print("b = ", b)
+
+if op == 'Union':
+    print("Union")
+    correct_set = a.union(b)
+
+elif op == 'Intersection':
+    print("Intersection")
+    correct_set = a.intersection(b)
 elif nSize == 3:
     print("Difference")
     generate_set(user)
