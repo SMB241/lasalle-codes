@@ -1,3 +1,25 @@
+import pwinput
+
+print('=' * 30)
+print("LED RUNNING LIGHTS")
+print('=' * 30)
+
+username = 'SMB'
+pw = '12345'
+
+un_input = input('Enter a username: ')
+password = pwinput.pwinput(prompt='Password: ', mask='*')
+
+if un_input == username and password == pw:
+    print('Authentication Successful')
+else:
+    print('Authentication Failed')
+
+for x in range(6):
+    print(" . " * 20)
+
+
+
 def generate_set(user):
     import random
     nSize = random.randint(1, 10)
