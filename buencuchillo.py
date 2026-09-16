@@ -12,11 +12,32 @@ password = pwinput.pwinput(prompt='Password: ', mask='*')
 
 if un_input == username and password == pw:
     print('Authentication Successful')
+
+    for x in range(6):
+        print(" . " * 20)
+
+    s = (" sssss"
+         "s"
+         " ssss "
+         "     s"
+         " ssss ")
+
+    m = ("M     M"
+         "MM   MM"
+         "M M M M"
+         "M     M"
+         "M     M"
+         )
+
+    b = ("BBBBB"
+         "B    B"
+         "BBBBB"
+         "B    B"
+         "BBBBB")
 else:
     print('Authentication Failed')
 
-for x in range(6):
-    print(" . " * 20)
+
 
 
 
